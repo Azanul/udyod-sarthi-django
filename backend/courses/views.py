@@ -1,8 +1,8 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Course, Skill
-from .serializers import CourseSerializer, SkillSerializer
+from .models import Course
+from .serializers import CourseSerializer
 from django.db.models import Q
 
 class CourseList(APIView):
