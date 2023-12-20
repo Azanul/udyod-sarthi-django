@@ -3,8 +3,12 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from .views import EndUserListCreateView, EndUserRetrieveUpdateDestroyView
+
 
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('endusers/', EndUserListCreateView.as_view(), name='enduser-list-create'),
+    path('endusers/<int:pk>/', EndUserRetrieveUpdateDestroyView.as_view(), name='enduser-retrieve-update-destroy'),
 ]
