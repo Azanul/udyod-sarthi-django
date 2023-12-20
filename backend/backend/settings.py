@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     # "rest_framework.authtoken",
     "corsheaders",
     "jobs",
-    "courses"
+    "courses",
+    "mock_test"
 ]
 
 MIDDLEWARE = [
