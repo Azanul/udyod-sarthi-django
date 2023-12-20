@@ -55,7 +55,7 @@ def store_pdf_embedding(pdf_path):
 def extract_information_from_pdf(pdf_path):
     pdf_text = extract_text_from_pdf(pdf_path)
 
-    prompt = f"If and only if it is a job posting extract title, description, location, company, posted_at(Y-m-d H:i:s), application_deadline(YYYY-MM-DD) and salary rannge as salary_min, salary_max from the following PDF text:\n\n{pdf_text}"
+    prompt = f"If and only if it is a job posting extract title, description, location, company, posted_at(Y-m-d H:i:s), application_deadline(YYYY-MM-DD), disability_category, number of posts as no_posts and salary rannge as salary_min, salary_max from the following PDF text:\n\n{pdf_text}"
     response = openai.chat.completions.create(
         messages=[
             {
