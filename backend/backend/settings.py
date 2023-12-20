@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "django_crontab",
     # "rest_framework.authtoken",
     "corsheaders",
-    "jobs"
+    "jobs",
+    "courses"
 ]
 
 MIDDLEWARE = [
