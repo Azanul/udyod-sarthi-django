@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "jobs",
     "courses",
-    "mock_test"
+    "mock_tests"
 ]
 
 MIDDLEWARE = [
