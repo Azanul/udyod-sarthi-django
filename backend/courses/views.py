@@ -11,7 +11,7 @@ class CourseList(APIView):
         courses = Course.objects.filter(
             Q(title__icontains=search_term) |
             Q(description__icontains=search_term) |
-            Q(skills_taught__name__icontains=search_term)
+            Q(skills_taught__contains=[search_term])
         )
         serializer = CourseSerializer(courses, many=True)
         return Response(serializer.data)
