@@ -6,9 +6,9 @@ class Question(models.Model):
     choices = ArrayField(
         models.CharField(max_length=255, blank=True),
         size=4,
-        default=[]
+        default=list
     )
-    answer = models.IntegerField
+    answer = models.IntegerField()
 
 class MockTest(models.Model):
     title = models.CharField(max_length=255)
@@ -17,9 +17,9 @@ class MockTest(models.Model):
     skills = ArrayField(
         models.CharField(max_length=255, blank=True),
         size=8,
-        default=[]
+        default=list
     )
-    questions = ArrayField(Question, default=[])
+    questions = models.ManyToManyField(Question)
 
     def __str__(self):
         return self.title
