@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "jobs",
     "courses",
-    "mock_tests"
+    "mock_tests",
+    "user"
 ]
 
 MIDDLEWARE = [
@@ -148,3 +149,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
+
+AUTH_USER_MODEL = "user.EndUser"

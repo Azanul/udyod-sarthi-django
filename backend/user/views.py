@@ -26,8 +26,9 @@ class EndUserRetrieveUpdateDestroyView(APIView):
 
     def get(self, request, pk, format=None):
         enduser = self.get_object(pk)
-        serializer = EndUserSerializer(enduser)
-        return Response(serializer.data)
+        if enduser:
+            serializer = EndUserSerializer(enduser)
+            return Response(serializer.data)
 
     def put(self, request, pk, format=None):
         enduser = self.get_object(pk)
@@ -41,3 +42,15 @@ class EndUserRetrieveUpdateDestroyView(APIView):
         enduser = self.get_object(pk)
         enduser.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+class RegisterView(APIView):
+    def post(self, request):
+        print(0)
+        serializer = EndUserSerializer(data=request.data)
+        print(1)
+        if serializer.is_valid():
+            print(2)
+            serializer.save()
+            print(3)
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

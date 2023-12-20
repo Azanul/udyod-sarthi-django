@@ -8,7 +8,7 @@ class Course(models.Model):
     skills_taught = ArrayField(
         models.CharField(max_length=255, blank=True),
         size=8,
-        default=[]
+        default=list
     )
 
     def __str__(self):
